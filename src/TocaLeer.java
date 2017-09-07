@@ -1,16 +1,48 @@
 
 public class TocaLeer {
-	static String [] alumnos = {"1","2","3","4","5","6"};
+	static String [] alumnos = { "Arkaitz",
+            "Erlantz1",
+            "Fran",
+            "Cristian",
+            "Erlantz2",
+            "Leire" ,
+            "Mikel",
+            "Josu",
+            "Alberto",
+            "Jon",
+            "Arantza",
+            "Naiara",
+            "Lander",
+            "Yeray",
+            "German"
+          };
+
+	static String [] Usugit = { "arkaitzgl",
+            "erliglesias",
+            "FranPerez92",
+            "CristianVar",
+            "Erlantzcabrejas",
+            "LeireBustin" ,
+            "zoroa84",
+            "Katakume",
+            "amsoria91",
+            "alarconsolis",
+            "",
+            "naiaramateos",
+            "LanderAB",
+            "LordBlacKhiin",
+            ""
+          };
 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Participante [] listaParticipantes = new Participante[alumnos.length];
+		for (int i = 0; i < alumnos.length; i++) {
+			listaParticipantes[i] = new Participante(alumnos[i], Usugit[i]);
+		}
 		int numAleatorio= GenerarNumeroAleatorio (alumnos.length);
-		int largura = alumnos.length;
-		boolean estado[]; 
-		String alumno = "Ander";
-		
-		System.out.println("El/la afortunad@ es:" + numAleatorio);
+		System.out.println("El/la afortunad@ es:" + listaParticipantes[numAleatorio].getNombre());
 		
 		
 
