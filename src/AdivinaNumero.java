@@ -12,13 +12,14 @@ public class AdivinaNumero {
 		System.out.println("--Tienes 3 intentos, suerte--");
 		System.out.println("-----------------------------");
 		
-		int numeroAdivinar = (int)(Math.random()*9)+1;
+		int numeroAdivinar;
 		int intentos = 3;
 		int numero = 0;
 		String seguir = "Si";
 		Scanner sc = new Scanner(System.in);
 		do {
-			intentos = 3;			
+			intentos = 3;
+			numeroAdivinar = (int)(Math.random()*9)+1;
 			do {
 				try {
 					System.out.println("Mete un numero entero entre 1-10.");
