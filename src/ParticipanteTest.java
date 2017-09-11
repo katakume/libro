@@ -24,7 +24,6 @@ public class ParticipanteTest extends TestCase {
 			Participante matusalem = new Participante("Matu", 235);			
 			fail("Deberia haber salido error");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			assertEquals(ParticipanteException.EXCEPTION_MAYOR_100, e.getMessage());
 		}
 	}
@@ -35,7 +34,6 @@ public class ParticipanteTest extends TestCase {
 		try {
 			p1.setEdad(88);
 		} catch (ParticipanteException e) {
-			// TODO Auto-generated catch block
 			fail("No debería lanzar excepcion");
 			
 		}
@@ -43,15 +41,13 @@ public class ParticipanteTest extends TestCase {
 			p1.setEdad(-3);
 			fail("Deberia haber salido error");
 		} catch (ParticipanteException e) {
-			// TODO Auto-generated catch block
 			assertEquals(ParticipanteException.EXCEPTION_MENOR_0, e.getMessage());
 		}
 		
 		try {
-			p1.setEdad(101);
+			p1.setEdad(200);
 			fail("Deberia haber salido error");
 		} catch (ParticipanteException e) {
-			// TODO Auto-generated catch block
 			assertEquals(ParticipanteException.EXCEPTION_MAYOR_100, e.getMessage());
 		}
 		

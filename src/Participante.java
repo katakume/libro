@@ -29,27 +29,16 @@ public class Participante {
 	}
 	
 	public Participante(String nombre, String usuarioGit) {
-		super();
+		this();
 		this.nombre = nombre;
 		this.usuarioGit = usuarioGit;
-		this.email = "";
-		this.trabajador = false;
-		this.edad = 0;
+		
 	}
 	
 	public Participante(String nombre, int edad) throws ParticipanteException {
-		super();
+		this();
 		this.nombre = nombre;
-		this.usuarioGit = "";
-		this.email = "";
-		this.trabajador = false;
-		if (edad < 0) {
-			throw new ParticipanteException(ParticipanteException.EXCEPTION_MENOR_0);
-		}else if (edad>100) {
-			throw new ParticipanteException(ParticipanteException.EXCEPTION_MAYOR_100);
-		}
-			
-		this.edad = edad;
+		setEdad(edad);
 	}
 
 	public String toString() {
