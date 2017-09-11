@@ -42,7 +42,7 @@ public class TocaLeer {
 			listaParticipantes[i] = new Participante(alumnos[i], Usugit[i]);
 		}
 		int numAleatorio= GenerarNumeroAleatorio (alumnos.length);
-		System.out.println("El/la afortunad@ es:" + listaParticipantes[numAleatorio].getNombre());
+		System.out.println("El/la afortunad@ es:" + listaParticipantes[numAleatorio]);
 		
 		
 

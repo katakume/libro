@@ -7,6 +7,7 @@ public class Participante {
 	private String usuarioGit;
 	private String email;
 	private boolean trabajador;
+	private int edad;
 	
 	//Constructores
 	
@@ -24,15 +25,39 @@ public class Participante {
 		this.usuarioGit = "";
 		this.email = "";
 		this.trabajador = false;
+		this.edad = 0;
 	}
-
+	
 	public Participante(String nombre, String usuarioGit) {
 		super();
 		this.nombre = nombre;
 		this.usuarioGit = usuarioGit;
 		this.email = "";
 		this.trabajador = false;
+		this.edad = 0;
 	}
+	
+	public Participante(String nombre, int edad) throws ParticipanteException {
+		super();
+		this.nombre = nombre;
+		this.usuarioGit = "";
+		this.email = "";
+		this.trabajador = false;
+		if (edad < 0) {
+			throw new ParticipanteException(ParticipanteException.EXCEPTION_MENOR_0);
+		}else if (edad>100) {
+			throw new ParticipanteException(ParticipanteException.EXCEPTION_MAYOR_100);
+		}
+			
+		this.edad = edad;
+	}
+
+	public String toString() {
+		return "Participante [nombre=" + nombre + ", usuarioGit=" + usuarioGit + ", email=" + email + ", trabajador="
+				+ trabajador + "]";
+	}
+
+	
 
 	public String getNombre() {
 		return nombre;
@@ -56,6 +81,23 @@ public class Participante {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public int getEdad() {
+		return edad;
+	}
+
+	
+
+	public void setEdad(int edad) throws ParticipanteException {
+		
+		if (edad < 0) {
+			throw new ParticipanteException(ParticipanteException.EXCEPTION_MENOR_0);
+		}else if (edad>100) {
+			throw new ParticipanteException(ParticipanteException.EXCEPTION_MAYOR_100);
+		}
+			
+		this.edad = edad;
 	}
 	
 	

@@ -19,6 +19,43 @@ public class ParticipanteTest extends TestCase {
 		assertEquals("",p2.getEmail());
 		assertFalse(p2.isTrabajador());
 		assertEquals("https://github.com/",p2.generarLinkGitHub());
+		
+		try {
+			Participante matusalem = new Participante("Matu", 235);			
+			fail("Deberia haber salido error");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			assertEquals(ParticipanteException.EXCEPTION_MAYOR_100, e.getMessage());
+		}
+	}
+	
+	public void testExceptionEdad() {
+		Participante p1 = new Participante("ander", "Anderuraga");
+		
+		try {
+			p1.setEdad(88);
+		} catch (ParticipanteException e) {
+			// TODO Auto-generated catch block
+			fail("No debería lanzar excepcion");
+			
+		}
+		try {
+			p1.setEdad(-3);
+			fail("Deberia haber salido error");
+		} catch (ParticipanteException e) {
+			// TODO Auto-generated catch block
+			assertEquals(ParticipanteException.EXCEPTION_MENOR_0, e.getMessage());
+		}
+		
+		try {
+			p1.setEdad(101);
+			fail("Deberia haber salido error");
+		} catch (ParticipanteException e) {
+			// TODO Auto-generated catch block
+			assertEquals(ParticipanteException.EXCEPTION_MAYOR_100, e.getMessage());
+		}
+		
+		
 	}
 
 }
